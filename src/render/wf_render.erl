@@ -1,7 +1,7 @@
 -module(wf_render).
 -include_lib("nitro/include/nitro.hrl").
 -compile(export_all).
-
+%% 判断element的类型，根据结果分别调用render_element和render_action
 render_item(undefined) -> <<>>;
 render_item(E) when element(2,E) =:= element -> wf_render_elements:render_element(E);
 render_item(E) when element(2,E) =:= action  ->
